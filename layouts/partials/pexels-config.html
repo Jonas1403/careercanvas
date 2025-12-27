@@ -18,7 +18,9 @@ SECURITY NOTE:
 
 <script>
   window.HERO_USE_LOCAL = "{{ .Site.Params.heroBackground.useLocal }}";
-  window.HERO_LOCAL_IMAGE = "{{ .Site.Params.heroBackground.localImage }}";
+  window.HERO_LOCAL_IMAGE_DESKTOP = "{{ .Site.Params.heroBackground.localImageDesktop }}";
+  window.HERO_LOCAL_IMAGE_MOBILE = "{{ .Site.Params.heroBackground.localImageMobile }}";
+
   window.PEXELS_API_KEY = null;
   window.FORMSPREE_ENDPOINT = "{{ .Site.Params.formspreeEndpoint }}";
 
