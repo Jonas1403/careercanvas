@@ -19,9 +19,11 @@ class PexelsBackground {
 
   waitForConfig() {
     this.useLocal = window.HERO_USE_LOCAL;
-    this.localImage = window.HERO_LOCAL_IMAGE;
-    console.log("background-js: use Local image:", this.useLocal);
-    console.log("background-js: local image:", this.localImage);
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    this.localImage = isMobile
+      ? window.HERO_LOCAL_IMAGE_MOBILE
+      : window.HERO_LOCAL_IMAGE_DESKTOP;
+
     if (this.useLocal && this.localImage) {
       // direkt lokales Bild setzen
       this.currentImage = this.localImage;
