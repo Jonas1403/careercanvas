@@ -46,7 +46,7 @@ SECURITY NOTE:
       const apiUrl =
         window.location.hostname === "localhost"
           ? "http://localhost:3001/api/config"
-          : "/api/config";
+          : "/api/config.js";
 
       const response = await fetch(apiUrl);
       if (response.ok) {
