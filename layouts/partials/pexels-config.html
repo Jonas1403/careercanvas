@@ -19,8 +19,9 @@ SECURITY NOTE:
 <script>
   window.HERO_USE_LOCAL = "{{ .Site.Params.heroBackground.useLocal }}";
   window.HERO_LOCAL_IMAGE = "{{ .Site.Params.heroBackground.localImage }}";
-  window.PEXELS_API_KEY = "{{ .Site.Params.pexels_api_key }}";
-  window.FORMSPREE_ENDPOINT = "{{ .Site.Params.formspree_endpoint }}";
+  window.PEXELS_API_KEY = null;
+  window.FORMSPREE_ENDPOINT = "{{ .Site.Params.formspreeEndpoint }}";
+
 
   // Load queries from data attribute (configured in config.toml)
   const configElement = document.getElementById("pexels-config");
