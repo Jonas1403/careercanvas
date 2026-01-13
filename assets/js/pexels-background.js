@@ -19,8 +19,7 @@ class PexelsBackground {
 
   waitForConfig() {
     this.useLocal = window.HERO_USE_LOCAL;
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    this.localImage = isMobile
+    this.localImage = this.isMobile()
       ? window.HERO_LOCAL_IMAGE_MOBILE
       : window.HERO_LOCAL_IMAGE_DESKTOP;
 
@@ -52,6 +51,10 @@ class PexelsBackground {
       heroSection.style.background = "transparent";
       heroSection.style.transition = "background 0.3s ease-in-out";
     }
+  }
+
+  isMobile() {
+    return window.matchMedia("(max-width: 768px)").matches;
   }
 
   getQueries() {
@@ -268,7 +271,9 @@ class PexelsBackground {
       bgContainer.style.backgroundSize = "cover";
       bgContainer.style.backgroundPosition = "center";
       bgContainer.style.backgroundRepeat = "no-repeat";
-      bgContainer.style.backgroundAttachment = "fixed";
+      bgContainer.style.backgroundAttachment = this.isMobile()
+        ? "scroll"
+        : "fixed";
 
       // Remove gradient-bg class and add pexels-bg class
       heroSection.classList.remove("gradient-bg");
